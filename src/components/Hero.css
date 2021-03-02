@@ -1,0 +1,42 @@
+.Hero {
+    margin-top: 75px;
+    padding: 10px;
+}
+
+.Hero .h1 {
+    margin: 10px;
+}
+
+.Hero img {
+    object-fit: cover;
+    width: 90%;
+}
+
+
+/* Smartphone o piccoli Tablet */
+
+
+/* @media all and (max-width: 480px) {
+    h1 
+    e immagine  
+}  */
+
+
+/* Tablet in modalità orizzontale */
+
+
+/* @media all and (min-width: 737px) and (max-width: 1279px) { 
+
+ } */
+
+
+/* Tablet in modalità verticale */
+
+
+/* @media all and (min-width: 481px) and (max-width: 736px) { ... } */
+
+
+/* Schermi Desktop o Portatili */
+
+
+/* @media all and (min-width: 1280px) and (max-width: 1689px) {  } */
