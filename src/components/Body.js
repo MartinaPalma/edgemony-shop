@@ -13,11 +13,8 @@ const { cover, title, description, products } = this.props;
     <div className="content">
     <h1>{title}</h1> 
     <h2>{description}</h2>
-    <div className="Card">
-      <h2>Prova</h2>
+    <div>
     <Products product={products}/>
-    {/* // products.map((product) => {
-    //   return <Products product={product}/> */}
   </div>   
   </div>
 </main>

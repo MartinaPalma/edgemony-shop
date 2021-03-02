@@ -1,0 +1,30 @@
+.modal--is-open {
+    display: block;
+    /* z-index: 100; */
+    background: white;
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 3px;
+    /* max-width: 700px;
+    max-height: 700px; */
+    padding: 2rem;
+}
+
+.BtnOpen {
+    cursor: pointer;
+    background-color: rgb(70, 251, 251);
+    color: white;
+    font-size: .9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+    padding: .3rem 1rem;
+    margin-left: .5rem;
+}
+
+.BtnOnClose {
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    opacity: 1;
+}

@@ -32,12 +32,13 @@ function App() {
         description = {data.description}
       />
   
-      <div className = 'Card'>
+      <div className = 'Products'>
         {
           fakeProducts.map((product) =>
             <Products 
               titleProducts = {product.title}
               cardImage = {product.image}
+              descriptionProducts = {product.description}
               price = {product.price}
               key={ product.id }
             />
