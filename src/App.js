@@ -4,9 +4,7 @@ import Header from './components/Header';
 
 import Hero from './components/Hero';
 
-import Products from './components/Products';
-
-import Footer from './components/Footer';
+import ProductList from './components/ProductList';
 
 
 const fakeProducts = require("./mocks/data/products.json");
@@ -24,31 +22,30 @@ const data = {
 function App() {
   return (
     <div className="App">
-      <Header logo = {data.logo} alt ="logo"/>
+      <Header logo = {data.logo} title={data.title} />
 
       <Hero
         title = {data.title}
-        cover = {data.cover}
         description = {data.description}
+        cover = {data.cover}
       />
-  
-      <div className = 'Products'>
-        {
-          fakeProducts.map((product) =>
-            <Products 
-              titleProducts = {product.title}
-              cardImage = {product.image}
-              descriptionProducts = {product.description}
-              price = {product.price}
-              key={ product.id }
-            />
-          )
-        }
+
+      <ProductList products={data.products}/>
       </div>
   
-      {/* <Footer 
-      company = {data.title} /> */}
-    </div>
+      // <div className = 'Products'>
+      //   {
+      //     fakeProducts.map((product) =>
+      //       <Products 
+      //         titleProducts = {product.title}
+      //         cardImage = {product.image}
+      //         descriptionProducts = {product.description}
+      //         price = {product.price}
+      //         key={ product.id }
+      //       />
+      //     )
+      //   }
+      // </div>
   )
 }
 
