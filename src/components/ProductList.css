@@ -8,35 +8,3 @@
 .ProductList .Product {
     margin: 10px;
 }
-
-.lds-default {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-.lds-default {
-    animation: nome-animazione 2s;
-}
-
-.lds-default div {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: rgb(29, 0, 189);
-    border-radius: 50%;
-    animation: lds-default 1.2s linear infinite;
-}
-
-@keyframes lds-default {
-    0%,
-    20%,
-    80%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-}
