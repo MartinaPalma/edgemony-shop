@@ -23,33 +23,3 @@
     cursor: pointer;
     transform: scale(1.1);
 }
-
-
-/* . {
-    box-sizing: border-box;
-    width: 300px;
-    height: 380px;
-    margin: 40px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px 2px #808080;
-    align-items: center;
-    transition: 1s;
-}
-
-.price {
-    margin-top: 10px;
-} */
-
-
-/* .CardImage {
-    height: 200px;
-    margin-top: auto;
-} */
-
-
-/* .titleProducts {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    margin-top: auto;
-} */
