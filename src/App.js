@@ -8,6 +8,13 @@ import Hero from './components/Hero';
 
 import ProductList from './components/ProductList';
 
+import Modal from './components/Modal';
+
+import Loading from './components/Loading';
+
+import ErrorBanner from './components/ErrorBanner';
+
+
 
 const fakeProducts = require("./mocks/data/products.json");
 
@@ -22,25 +29,33 @@ const data = {
 };
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [isError, setError] = useState(false);
+  const [products, setProducts] = useState([])
+  //useState mi permette di aggiornare lo stato in ogni render
+  const [isLoading, setLoading] = useState(false) //all'inizio non sta caricando niente quindi è false
+  const [isError, setError] = useState('')
+  const [ retry, setRetry ] = useState(false)
 
   useEffect(() => {
-    // console.log("useEffect");
     setLoading(true);
-    setError(false);
+    
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((products) => {
-        setProducts(products);
+      .then((data) => { 
+        const hasError = Math.random() > 0.5
+      if (!hasError) {
+        setProducts(data); //callback
+        console.log(data)
         setLoading(false);
-      })
-      .catch(() => {
+        setError('');
+      } else {
+        throw new Error('Product server API call response error')
+      }
+    })
+      .catch((err) => {
+        setError(err.message); 
         setLoading(false);
-        setError(true);
       });
-  }, []);
+  }, [retry]);
 
   return (
     <div className="App">
@@ -51,11 +66,18 @@ function App() {
         description = {data.description}
         cover = {data.cover}
       />
-      
-      {!isLoading ? (<ProductList products={products} />) : (<div class="lds-default"><h2>Loading...</h2></div>)}
-      {isError&&<h2>Si è verificato un errore</h2>}
+     
+      { isLoading 
+      ? <Loading />
+      : isError 
+        ? <ErrorBanner isError= {isError} setRetry={ () => setRetry(!retry)} closeError={() => setRetry (false)} /> 
+        : <ProductList products={products}/>
+      }
+
+      {/* <Modal isOpen={ modalIsOpen } product={product} onClose={onClose} /> */}
 </div>
 );
 }
+
 
 export default App
