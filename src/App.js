@@ -30,8 +30,7 @@ const data = {
 
 function App() {
   const [products, setProducts] = useState([])
-  //useState mi permette di aggiornare lo stato in ogni render
-  const [isLoading, setLoading] = useState(false) //all'inizio non sta caricando niente quindi è false
+  const [isLoading, setLoading] = useState(false)
   const [isError, setError] = useState('')
   const [ retry, setRetry ] = useState(false)
 
@@ -43,12 +42,12 @@ function App() {
       .then((data) => { 
         const hasError = Math.random() > 0.5
       if (!hasError) {
-        setProducts(data); //callback
+        setProducts(data); 
         console.log(data)
         setLoading(false);
         setError('');
       } else {
-        throw new Error('Product server API call response error')
+        throw new Error('Error!')
       }
     })
       .catch((err) => {
