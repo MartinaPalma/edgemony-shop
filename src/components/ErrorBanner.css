@@ -2,11 +2,15 @@
     padding: 20px;
     background-color: brown;
     color: white;
-    /* margin-bottom: 15px; */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.ErrorSpan {
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .ErrorBanner .closebtn {
