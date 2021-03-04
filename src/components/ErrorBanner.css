@@ -1,0 +1,42 @@
+.ErrorBanner {
+    padding: 20px;
+    background-color: brown;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.ErrorBanner .closebtn {
+    margin-left: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px white;
+    color: gray;
+    font-weight: bold;
+    float: right;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ErrorBanner .closebtn:hover {
+    color: black;
+}
+
+.ErrorBanner .retrybtn {
+    /* margin-right: 15px; */
+    background-color: white;
+    padding: 20px;
+    margin: 3px;
+    border-radius: 10px;
+    border: solid 1px white;
+    color: gray;
+    font-weight: bold;
+    /* float: left; */
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ErrorBanner .retrybtn:hover {
+    color: black;
+}

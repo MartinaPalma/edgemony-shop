@@ -2,9 +2,33 @@ import React from 'react'
 import './Modal.css'
 
 
-// function Modal({ isOpen, title, img, description, price, onClose }) {
   
 function Modal({ isOpen, onClose, product }) {
+  // const [ productInModal, setProductInModal ] = useState(null)
+  // const [ modalIsOpen, setModalIsOpen ] = useState(false)
+
+  // function openProductModal(product) {
+  //   console.log(product)
+  //   setProductInModal(product)
+  //   setModalIsOpen(true)
+  // }
+
+  // function closeModal() {
+  //   setModalIsOpen(false)
+  //   setTimeout(() => {
+  //     setProductInModal(null)
+  //   }, 500)
+  // }
+
+  // useEffect(() => {
+  //   if (modalIsOpen) {
+  //     document.body.style.height = `100vh`
+  //     document.body.style.overflow = `hidden`
+  //   } else {
+  //     document.body.style.height = ``
+  //     document.body.style.overflow = ``
+  //   }
+  // }, [ modalIsOpen ])
 
     return isOpen && ( 
     <div className='ProductModal'>
