@@ -7,7 +7,7 @@ function Loading({ isLoading }) {
         // isLoading ?
         <div className="isLoading">
             <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-            <h3>loading</h3>
+            <h3>Loading...</h3>
         </div>
         // :
         // !isError && < ProductList products = { products }

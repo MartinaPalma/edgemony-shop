@@ -70,11 +70,11 @@ function App() {
       { isLoading 
       ? <Loading />
       : isError 
-        ? <ErrorBanner isError= {isError} setRetry={ () => setRetry(!retry) }/> 
+        ? <ErrorBanner isError= {isError} setRetry={ () => setRetry(!retry)} closeError={() => setRetry (false)} /> 
         : <ProductList products={products}/>
       }
 
-      {/* <Modal isOpen={ modalIsOpen } product={productInModal} onClose={onClose} /> */}
+      {/* <Modal isOpen={ modalIsOpen } product={product} onClose={onClose} /> */}
 </div>
 );
 }
