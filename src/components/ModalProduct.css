@@ -42,5 +42,38 @@
 
 .BtnOnClose {
     cursor: pointer;
-    opacity: 1;
+    background-color: rgb(0, 219, 219);
+    opacity: 0.7;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.BtnOnClose:active .BtnOnClose:hover {
+    border: none;
+}
+
+.modal-content .BtnOnClose {
+    display: flex;
+    float: left;
+}
+
+
+/* Button AddCart */
+
+.BtnCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BtnAddtocart {
+    cursor: pointer;
+    background-color: rgb(0, 219, 219);
+    color: white;
+    font-size: .9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
 }

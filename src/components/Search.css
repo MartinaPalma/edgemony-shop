@@ -1,0 +1,27 @@
+.Search {
+    position: relative;
+    padding: 10px;
+    border: none;
+}
+
+.Search input {
+    padding: 4px;
+}
+
+.Search input {
+    padding-left: 30px;
+    border: 1px solid rgb(0, 219, 219);
+    border-radius: 6px;
+}
+
+.Search input:active {
+    border: 1px rgb(0, 219, 219);
+}
+
+.Search svg {
+    position: absolute;
+    top: 14px;
+    left: 4;
+    height: 16px;
+    color: rgb(0, 219, 219);
+}

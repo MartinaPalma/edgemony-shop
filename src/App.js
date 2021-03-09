@@ -2,17 +2,22 @@ import "./App.css";
 
 import { useState, useEffect } from "react";
 
+// import { fetchProducts, fetchCatogories } from "./services/api";
+
 import Header from './components/Header';
 
 import Hero from './components/Hero';
 
 import ProductList from './components/ProductList';
 
-import Modal from './components/Modal';
+import ModalProduct from './components/ModalProduct';
 
 import Loading from './components/Loading';
 
 import ErrorBanner from './components/ErrorBanner';
+
+import Search from "./components/Search";
+
 
 
 
@@ -32,7 +37,10 @@ function App() {
   const [products, setProducts] = useState([])
   const [isLoading, setLoading] = useState(false)
   const [isError, setError] = useState('')
+  const [ modalIsOpen, setModalIsOpen] = useState(false); 
   const [ retry, setRetry ] = useState(false)
+  const [inputUser, setInput] = useState("")
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     setLoading(true);
@@ -40,7 +48,7 @@ function App() {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => { 
-        const hasError = Math.random() > 0.5
+        const hasError = Math.random() > 0.6
       if (!hasError) {
         setProducts(data); 
         console.log(data)
@@ -58,25 +66,34 @@ function App() {
 
   return (
     <div className="App">
-      <Header logo = {data.logo} title={data.title} />
+      <Header logo = {data.logo} title={data.title} cart={cart} products={products}/>
 
       <Hero
         title = {data.title}
         description = {data.description}
         cover = {data.cover}
       />
-     
+      
+      <Search inputUser ={inputUser} onSearch={(value) => setInput(value)}/>
+
       { isLoading 
       ? <Loading />
       : isError 
-        ? <ErrorBanner isError= {isError} setRetry={ () => setRetry(!retry)} closeError={() => setRetry (false)} /> 
-        : <ProductList products={products}/>
+        ? <ErrorBanner isError= {isError} setRetry={ () => setRetry(!retry)} closeError={() => setRetry ("")} /> 
+        : <ProductList cart={cart} setCart={setCart} products={products} inputUser ={inputUser} />
       }
 
-      {/* <Modal isOpen={ modalIsOpen } product={product} onClose={onClose} /> */}
+     {/* {products.map(product => ( 
+     <ModalProduct 
+      isOpen={modalIsOpen} 
+      product={product}
+      onClose={() => setModalIsOpen(false)}
+      cart={cart}
+      setCart={setCart}
+      /> ))} */}
 </div>
 );
 }
 
+export default App;
 
-export default App

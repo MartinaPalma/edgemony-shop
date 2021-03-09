@@ -1,0 +1,14 @@
+.ModalCart {
+    background-color: lightsteelblue;
+    position: absolute;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.4s ease;
+    transform: translateX(100%);
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
